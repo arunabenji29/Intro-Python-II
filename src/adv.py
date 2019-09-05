@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -38,6 +38,40 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
+player = Player('Rocko',room['outside'])
+print(player.room)
+direction=''
+
+while direction!= 'q':
+    direction = input('One: Please enter a direction: ')
+    if(direction== 'n'):
+        if(player.room.n_to!=None):
+            player.room = player.room.n_to
+            print(player.room)
+        else:
+            print('you cant move in that direction')
+    
+    elif(direction== 's'):
+        if(player.room.s_to!=None):
+            player.room = player.room.s_to
+            print(player.room)
+        else:
+            print('you cant move in that direction')
+
+    elif(direction== 'e'):
+        if(player.room.e_to!=None):
+            player.room = player.room.e_to
+            print(player.room)
+        else:
+            print('you cant move in that direction')
+
+    elif(direction== 'w'):
+        if(player.room.w_to!=None):
+            player.room = player.room.w_to
+            print(player.room)
+        else:
+            print('you cant move in that direction')
+
 
 # Write a loop that:
 #
